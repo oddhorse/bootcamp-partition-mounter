@@ -1,19 +1,9 @@
 #!/bin/sh
 
-#    mounts the bootcamp partition on a hd
-#    copyright (c) 2022  oddhorse
 #
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU General Public License as published by
-#    the Free Software Foundation, either version 3 of the License, or
-#    (at your option) any later version.
-#
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU General Public License for more details.
-#
-#    You should have received a copy of the GNU General Public License
-#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+
+##
 
 # grab disk id for ntfs drive
 mount=$(mount)
@@ -52,8 +42,8 @@ fi
 
 
 # final command:
-sudo /usr/local/bin/ntfs-3g $disk_id /Volumes/win -o local -o allow_other -o auto_xattr -o auto_cache
+sudo /usr/local/bin/ntfs-3g /dev/$disk_id /Volumes/win -o local -o allow_other -o auto_xattr -o auto_cache
 
 echo "done im done! mounted your windows fs at /Volumes/win"
 
-open /Volumes/windows
+open /Volumes/win
